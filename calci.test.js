@@ -22,4 +22,11 @@ describe('Calculator', () => {
         expect( function(){calculator.add("1,-2,7,9"); } ).toThrow(new Error("negatives numbers not allowed"))
 
     })
+    it('should allow new line in the string', () => {
+        const Module = require("./calci")
+        const calculator = new Module()
+        calculator.add("1\n2,7,9")
+        expect(calculator.value).toBe(19)
+
+    })
 })
