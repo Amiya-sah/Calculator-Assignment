@@ -16,4 +16,10 @@ describe('Calculator', () => {
         expect(calculator.value).toBe(19)
 
     })
+    it('should throw an exception with a negative number', () => {
+        const Module = require("./calci")
+        const calculator = new Module()
+        expect( function(){calculator.add("1,-2,7,9"); } ).toThrow(new Error("negatives numbers not allowed"))
+
+    })
 })
