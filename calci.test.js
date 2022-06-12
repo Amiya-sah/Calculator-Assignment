@@ -19,7 +19,7 @@ describe('Calculator', () => {
     it('should throw an exception with a negative number', () => {
         const Module = require("./calci")
         const calculator = new Module()
-        expect( function(){calculator.add("1,-2,7,9"); } ).toThrow(new Error("negatives numbers not allowed"))
+        expect( function(){calculator.add("1,-2,-7,-9"); } ).toThrow(new Error("negatives numbers not allowed, passed -2-7-9..."))
 
     })
     it('should allow new line in the string', () => {
