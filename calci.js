@@ -14,7 +14,10 @@ strCalc.prototype.add = function(str) {
         throw new Error(`negatives numbers not allowed, passed ${negVal}...`);
     }
     let strNum1 = this.strNum.replace(/(\r\n|\n|\r)/gm, ",")
-    const myArray = strNum1.split(",");
+    let strNum2 = strNum1.replace(/;/g, ",")
+    let strNum3 = strNum2.replace(/:/g, ",")
+    let strNum4 = strNum3.replace(/_/g, ",")
+    const myArray = strNum4.split(",");
     let Sum = 0;
     for(let i=0; i< myArray.length; i++) {
         Sum += Number(myArray[i])

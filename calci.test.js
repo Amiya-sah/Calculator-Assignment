@@ -16,7 +16,7 @@ describe('Calculator', () => {
         expect(calculator.value).toBe(19)
 
     })
-    it('should throw an exception with a negative number', () => {
+    it('should throw an exception with a negative number passed and show all negatives', () => {
         const Module = require("./calci")
         const calculator = new Module()
         expect( function(){calculator.add("1,-2,-7,-9"); } ).toThrow(new Error("negatives numbers not allowed, passed -2-7-9..."))
@@ -27,6 +27,14 @@ describe('Calculator', () => {
         const calculator = new Module()
         calculator.add("1\n2,7,9")
         expect(calculator.value).toBe(19)
+
+    })
+
+    it('should accept different delimiters in the string', () => {
+        const Module = require("./calci")
+        const calculator = new Module()
+        calculator.add("1;2;3:4_5")
+        expect(calculator.value).toBe(15)
 
     })
 })
